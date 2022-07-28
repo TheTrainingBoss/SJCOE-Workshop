@@ -59,3 +59,4 @@ resource "azurerm_linux_virtual_machine" "linolinuxvm" {
     Name = local.project_name
   }
 }
+

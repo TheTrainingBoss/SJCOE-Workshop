@@ -1,8 +1,4 @@
 terraform {
-  backend "local" {
-    path = "./terraform.tfstate"
-    
-  }
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
@@ -12,5 +8,9 @@ terraform {
 }
 
 provider "azurerm" {
-  features {}
+  features {
+    resource_group {
+      prevent_deletion_if_contains_resources = false
+    }
+  }
 }
